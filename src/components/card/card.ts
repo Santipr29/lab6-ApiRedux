@@ -66,4 +66,4 @@ export default class Card extends HTMLElement {
     }
 }
 
-customElements.define('app-card', Card)
+customElements.define('my-card', Card)
