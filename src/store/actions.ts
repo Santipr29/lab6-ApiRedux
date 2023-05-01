@@ -3,10 +3,10 @@ import { AddTripAction, GetTripsAction, TripsActions } from "../types/store"
 
 
 export const getTrips = async (): Promise<GetTripsAction> => {
-    const favs = await api();
+    const favs = api();
     return {
         action: TripsActions.GET,
-        payload: favs
+        payload: []
     }
 }
 
