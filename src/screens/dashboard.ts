@@ -22,17 +22,34 @@ class Dashboard extends HTMLElement {
       css.innerHTML = styles
       this.shadowRoot?.appendChild(css)
 
+      const tittle = this.ownerDocument.createElement("h1")
+      tittle.innerText = "Pokedex"
+
+      const pokeSection = this.ownerDocument.createElement("section")
+
+      pokeSection.appendChild(tittle)
+
       data.forEach((data: any)=>{
         const card = this.ownerDocument.createElement('my-card')
         card.setAttribute(Attributes.name, data.species.name)
         card.setAttribute(Attributes.image, data.sprites.front_default)
         card.setAttribute(Attributes.type, data.types[0].type.name)
 
-        const pokeSection = this.ownerDocument.createElement("section")
         pokeSection.appendChild(card);
-        this.shadowRoot?.appendChild(pokeSection);
       })
+      
+      this.shadowRoot?.appendChild(pokeSection);
 
+
+      const tittlefav = this.ownerDocument.createElement("h1")
+      tittlefav.innerText = "Favorites"
+
+      const pokeFavs = this.ownerDocument.createElement("section")
+      pokeFavs.appendChild(tittlefav)
+
+
+      
+      this.shadowRoot?.appendChild(pokeFavs);
 
 
         } 

@@ -1,5 +1,7 @@
 import styles from './card.css';
 import { Attribute } from '../info/info';
+import { dispatch } from '../../store/index';
+import { addNewTrip } from '../../store/actions';
 
 export enum Attributes{
     "name" = "name",
@@ -57,6 +59,17 @@ export default class Card extends HTMLElement {
         info.setAttribute(Attribute.type, String(this.type))
         
         const btn = this.ownerDocument.createElement('my-button');
+        btn.addEventListener('click', ()=>{
+            dispatch(
+                addNewTrip({
+                    payload:{
+                        image: String(this.image),
+                        name: String(this.name),
+                        type: String(this.type)
+                    }
+                })
+                )
+        })
 
         const card = this.ownerDocument.createElement('section')
         card.appendChild(info)

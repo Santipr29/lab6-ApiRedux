@@ -3,7 +3,7 @@ import { Fav } from "./favorites"
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-    trips: Fav[]
+    favorites: Fav[]
 }
 
 export enum TripsActions {
