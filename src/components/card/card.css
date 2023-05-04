@@ -1,0 +1,16 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+    border: 3px solid yellow;
+    border-radius: 30px;
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+}
+
+my-button{
+    margin-bottom: 30px;
+}

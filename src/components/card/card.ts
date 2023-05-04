@@ -50,8 +50,8 @@ export default class Card extends HTMLElement {
         if(this.shadowRoot) this.shadowRoot.innerHTML = ''
         
         const css = this.ownerDocument.createElement("style");
-                css.innerHTML = styles;
-                this.shadowRoot?.appendChild(css);
+        css.innerHTML = styles;
+        this.shadowRoot?.appendChild(css);
 
         const info = this.ownerDocument.createElement('my-info');
         info.setAttribute(Attribute.image, String(this.image))

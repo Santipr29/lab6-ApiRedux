@@ -31,10 +31,14 @@ class Dashboard extends HTMLElement {
       css.innerHTML = styles
       this.shadowRoot?.appendChild(css)
 
+      const container = this.ownerDocument.createElement("section")
+      container.className = "container"
+
       const tittle = this.ownerDocument.createElement("h1")
       tittle.innerText = "Pokedex"
 
       const pokeSection = this.ownerDocument.createElement("section")
+      pokeSection.className = "pokedex"
 
       pokeSection.appendChild(tittle)
 
@@ -47,13 +51,12 @@ class Dashboard extends HTMLElement {
         pokeSection.appendChild(card);
       })
       
-      this.shadowRoot?.appendChild(pokeSection);
-
 
       const tittlefav = this.ownerDocument.createElement("h1")
       tittlefav.innerText = "Favorites"
 
       const pokeFavs = this.ownerDocument.createElement("section")
+      pokeFavs.className = "favs"
       pokeFavs.appendChild(tittlefav)
 
       appState.favorites.forEach((Fav, i)=>{
@@ -65,7 +68,10 @@ class Dashboard extends HTMLElement {
         pokeFavs.appendChild(card);
       })
       
-      this.shadowRoot?.appendChild(pokeFavs);
+      container.appendChild(pokeSection)
+      container.appendChild(pokeFavs)
+
+      this.shadowRoot?.appendChild(container);
 
         } 
     }

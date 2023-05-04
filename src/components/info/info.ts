@@ -58,6 +58,7 @@ export default class InfoCard extends HTMLElement {
                     <h3>${this.type}</h3>
                 </section>
                 `;
+                
             }
         }
     }
